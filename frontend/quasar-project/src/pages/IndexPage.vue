@@ -1,5 +1,5 @@
 <template>
-  <q-page class="bg-dark text-white">
+  <q-page class="q-pa-lg">
     <!-- Hero sekcija s animacijom pri kliku -->
     <section
       class="hero-section flex flex-center column"
@@ -8,8 +8,8 @@
       <div class="row items-center q-gutter-xl">
         <!-- Logo -->
         <q-img
+          class="logo"
           src="/images/logo.png"
-          class="logo-white"
           style="width: 180px; height: 180px; cursor: pointer"
         />
         <div
@@ -45,8 +45,8 @@
         />
       </div>
 
-      <div class="q-mt-xl text-grey-6 text-subtitle1">
-        Klikom na logo vidi više!indexPageindexPage
+      <div class="q-mt-xl text-subtitle1 text-grey">
+        Klikom na logo vidi više!
       </div>
     </section>
 
@@ -76,7 +76,7 @@
       <div class="q-mt-xl">
         <div class="text-h4 text-bold q-mb-md">Igra dana</div>
 
-        <q-card class="q-pa-lg bg-grey-9">
+        <q-card class="q-pa-lg">
           <div class="row items-center">
             <q-img
               src="/images/random-game.jpg"
@@ -86,14 +86,14 @@
             />
             <div>
               <div class="text-h5">{{ statistics.naziv_igrice }}</div>
-              <div class="text-grey-5">{{ statistics.opis }}</div>
+              <div class="text-body1">{{ statistics.opis }}</div>
             </div>
           </div>
         </q-card>
       </div>
 
       <!-- Formalniji opis stranice -->
-      <div class="q-mt-xl text-grey-4 text-subtitle1">
+      <div class="q-mt-xl text-subtitle1">
         Na ovoj platformi korisnici mogu pregledavati razne igre, povezivati se
         s drugim igračima te ocjenjivati igre na temelju njihovih iskustava i
         preferencija.
@@ -139,39 +139,44 @@
       <!-- Kontakt podrška -->
       <div class="q-mt-xl">
         <div class="text-h4 text-bold q-mb-md">Kontakt podrška</div>
-        <p class="text-grey-4">
+        <p>
           Za bilo kakve upite ili tehničku podršku, slobodno nas kontaktirajte
           na:
         </p>
         <p>
-          <a href="mailto:support@gamelens.com" class="text-primary"
-            >support@gamelens.com</a
-          >
+          <q-btn
+            color="primary"
+            label="support@gamelens.com"
+            type="a"
+            href="mailto:support@gamelens.com"
+            flat
+            dense
+          />
         </p>
       </div>
 
       <!-- Često postavljana pitanja -->
       <div class="q-mt-xl">
         <div class="text-h4 text-bold q-mb-md">Često postavljana pitanja</div>
-        <div class="text-grey-4">
-          <div>
+        <div>
+          <div class="q-mb-md">
             <strong>Kako mogu registrirati novi račun?</strong>
-            <p>
+            <p class="q-mt-xs">
               Da biste registrirali novi račun, jednostavno kliknite na dugme
               "Registracija" na početnoj stranici, unesite svoje podatke i
               slijedite upute.
             </p>
           </div>
-          <div>
+          <div class="q-mb-md">
             <strong>Kako ocijeniti igru?</strong>
-            <p>
+            <p class="q-mt-xs">
               Ocjenjivanje igre možete obaviti nakon što je igrate. Na stranici
               svake igre ćete vidjeti mogućnost ocjene od 1 do 5 zvjezdica.
             </p>
           </div>
           <div>
             <strong>Kako se povezati s drugim igračima?</strong>
-            <p>
+            <p class="q-mt-xs">
               Na platformi možete povezati svoj profil s drugim igračima putem
               naših chat soba ili foruma, gdje možete razgovarati i dogovarati
               zajedničke igre.
@@ -181,7 +186,7 @@
       </div>
 
       <!-- Sva prava pridržana -->
-      <div class="q-mt-xl text-center text-grey-4">
+      <div class="q-mt-xl text-center text-grey">
         <p>&copy; 2025 GameLenz. Sva prava pridržana.</p>
       </div>
     </section>
@@ -229,6 +234,7 @@ export default {
 </script>
 
 <style scoped>
+/* KEEP THESE - they are truly custom to this page */
 .hero-section {
   height: 100vh;
   padding: 20px;
@@ -238,40 +244,12 @@ export default {
   flex-direction: column;
 }
 
-.logo-white {
-  filter: invert(1) brightness(2);
-  transition: transform 0.3s ease;
-}
-
-.logo-white:hover {
-  transform: scale(1.1);
-}
-
-.text-h1 {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  font-size: 3rem;
-}
-
-.text-h1:hover {
-  transform: scale(1.1);
-}
-
 .second-section {
   min-height: 100vh;
   padding: 30px;
 }
 
-.text-h4,
-.text-h5,
-.text-h2 {
-  color: #fff;
-}
-
-.text-grey-4 {
-  color: #b0b0b0;
-}
-
+/* Utility styles */
 .text-subtitle1 {
   font-size: 1.1rem;
   line-height: 1.5;
@@ -281,19 +259,5 @@ export default {
 
 .text-h3 {
   word-wrap: break-word;
-}
-
-.text-primary {
-  color: #1e88e5;
-  text-decoration: none;
-}
-
-.text-primary:hover {
-  text-decoration: underline;
-}
-
-.row {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
 }
 </style>
